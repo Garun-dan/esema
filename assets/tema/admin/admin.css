@@ -1,0 +1,689 @@
+/* 
+=============================================================================
+    Nama Proyek: esema
+    Deskripsi: elektronik assessment management.
+    Dibuat oleh: kosek
+    Tanggal: 24 Februari 2024
+=============================================================================
+*/
+
+/* Font */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+	font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+	font-size: 22px;
+	font-weight: 700;
+}
+
+h2 {
+	font-size: 20px;
+	font-weight: 600;
+}
+
+h3 {
+	font-size: 18px;
+	font-weight: 500;
+}
+
+h4 {
+	font-size: 16px;
+	font-weight: 400;
+}
+
+h5 {
+	font-size: 14px;
+	font-weight: 300;
+}
+
+h6 {
+	font-size: 12px;
+	font-weight: 200;
+}
+
+/* Colors */
+:root {
+	--primary-color: #83bc3c;
+	--secondary-color: #dce334;
+	--background-color: #f9f9f9;
+	--text-color: #000000;
+	--item-color: #ffffff;
+	--danger-color: #ff6347;
+	--warning-color: #ffa500;
+	--success-color: #32cd32;
+	--info-color: #87ceeb;
+	--light-color: #f5f5f5;
+	--dark-color: #333333;
+	--hover-menu-color: #c0c0c0;
+	--input-color: #d9d9d9;
+	--bar-1-color: #3e4c7a;
+	--bar-2-color: #b330c0;
+	--bar-3-color: #566d24;
+	--box-1-color: #ececec;
+	--box-2-color: #767676;
+	--box-3-color: #28a745;
+	--box-4-color: #3b3b3b;
+	--link-color: #0075ff;
+}
+
+body {
+	background: var(--background-color);
+}
+
+.topbar {
+	width: 100vw;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: var(--text-color);
+	z-index: 3;
+}
+
+.topbar img {
+	width: auto;
+	height: 40px;
+	object-fit: cover;
+}
+
+.topbar-menu {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.topbar-menu li {
+	list-style: none;
+	margin: 0 20px 0 0;
+}
+
+.topbar-menu .aktif {
+	position: relative;
+	list-style: none;
+	margin: 15px 20px 0 0;
+	background: var(--background-color);
+	padding: 5px 10px 5px 10px;
+	border-radius: 10px 10px 0 0;
+}
+
+.topbar-menu .aktif::before,
+.topbar-menu .aktif::after {
+	content: "";
+	position: absolute;
+	right: 0;
+	width: 10px;
+	height: 10px;
+}
+
+.topbar-menu .aktif::before {
+	bottom: 0;
+	left: calc(10px * -1);
+	border-radius: 100%;
+	box-shadow: 4px 4px var(--background-color);
+}
+
+.topbar-menu .aktif::after {
+	bottom: 0;
+	right: calc(10px * -1);
+	border-radius: 100%;
+	box-shadow: -4px 4px var(--background-color);
+}
+
+li a {
+	text-decoration: none;
+	color: var(--item-color);
+	font-size: 16px;
+}
+
+li a:hover {
+	text-decoration: none;
+	color: var(--hover-menu-color);
+	font-size: 16px;
+}
+
+.aktif a {
+	text-decoration: underline 2px var(--primary-color);
+	color: var(--text-color);
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.aktif a:hover {
+	text-decoration: underline 2px var(--primary-color);
+	color: var(--primary-color);
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.submenu {
+	display: none;
+	position: absolute;
+	background: var(--item-color);
+	width: auto;
+	margin-top: 15px;
+	height: auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 10px;
+	box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
+	z-index: 5;
+}
+
+.submenu a {
+	padding: 5px;
+	font-size: 14px;
+	font-weight: 400;
+	color: var(--text-color);
+	display: block;
+}
+
+.submenu a:hover {
+	background: var(--secondary-color);
+	color: var(--text-color);
+}
+
+.submenu .sub-aktif {
+	background: var(--primary-color);
+	color: var(--item-color);
+	font-weight: 700;
+	margin-bottom: 5px;
+	width: auto;
+}
+
+.submenu .sub-aktif:hover {
+	background: var(--primary-color);
+	color: var(--item-color);
+	font-weight: 700;
+	margin-bottom: 5px;
+	width: 100px;
+}
+
+.logout {
+	color: var(--item-color);
+	font-size: 16px;
+	font-weight: 700;
+}
+
+main {
+	width: 100%;
+	margin-top: 55px;
+	margin-bottom: 100px;
+}
+
+main th {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+main td {
+	font-size: 12px;
+}
+
+main .box {
+	width: 100%;
+	height: auto;
+	padding: 20px;
+	border-radius: 16px;
+	box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+	background: var(--item-color);
+}
+
+.tbl-primer {
+	width: auto;
+	height: auto;
+	padding: 5px 10px 5px 10px;
+	border-radius: 10px;
+	background: var(--success-color);
+	color: var(--item-color);
+	border: 0;
+	font-size: 12px;
+}
+
+.tbl-warning {
+	width: auto;
+	height: auto;
+	padding: 5px 10px 5px 10px;
+	border-radius: 10px;
+	background: var(--warning-color);
+	color: var(--text-color);
+	border: 0;
+	font-size: 12px;
+}
+
+.tbl-info {
+	width: auto;
+	height: auto;
+	padding: 5px 10px 5px 10px;
+	border-radius: 10px;
+	background: var(--info-color);
+	color: var(--item-color);
+	border: 0;
+	font-size: 12px;
+}
+
+.tbl-reset {
+	width: auto;
+	height: auto;
+	padding: 5px 10px 5px 10px;
+	border-radius: 10px;
+	background: var(--text-color);
+	color: var(--item-color);
+	border: 0;
+	font-size: 12px;
+}
+
+.tbl-danger {
+	width: auto;
+	height: auto;
+	padding: 5px 10px 5px 10px;
+	border-radius: 10px;
+	background: var(--danger-color);
+	color: var(--item-color);
+	border: 0;
+	font-size: 12px;
+}
+
+main .bio-statistik {
+	width: 100%;
+	height: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.bio-statistik .bio-data {
+	height: 200px;
+	width: 200px;
+	padding: 20px;
+	background: var(--primary-color);
+	border-radius: 16px;
+	box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	z-index: 2;
+}
+
+.bio-data img {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	margin-bottom: 10px;
+}
+
+.bio-data .bio-nama {
+	font-size: 20px;
+	font-weight: 600;
+	white-space: nowrap;
+	color: var(--item-color);
+}
+
+.bio-data .bio-nik {
+	font-size: 16px;
+	white-space: nowrap;
+	color: var(--item-color);
+}
+
+.bio-data .bio-akses {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.bio-akses a {
+	text-decoration: none;
+	color: var(--item-color);
+	margin-top: 10px;
+}
+
+.bio-statistik .data-statistik {
+	width: calc(100% - 220px);
+	height: 180px;
+	display: flex;
+	align-items: center;
+	overflow-y: hidden;
+	overflow-x: auto;
+}
+
+.data-statistik .box-statistik {
+	width: auto;
+	height: 180px;
+	padding: 20px;
+	border-radius: 16px;
+	margin-left: 20px;
+}
+
+.box-statistik a {
+	text-decoration: none;
+	padding: 5px;
+	border-radius: 5px;
+	background: var(--background-color);
+	color: var(--text-color);
+	font-size: 12px;
+	font-weight: 400;
+}
+
+.bio-statistik .item-statistik {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 10px;
+}
+
+.bio-statistik .report {
+	padding: 5px;
+	border-radius: 5px;
+	background: var(--secondary-color);
+	font-size: 12px;
+}
+
+.bio-statistik .pria,
+.bio-statistik .wanita {
+	font-size: 10px;
+	white-space: nowrap;
+}
+
+main .bio-profile {
+	width: 100%;
+	height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+.bio-profile .bio-avatar {
+	width: 100px;
+	height: 100px;
+	padding: 10px;
+}
+
+.bio-avatar img {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.bio-profile .data-profile {
+	height: 80px;
+	width: calc(100% - 100px);
+	margin-left: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	overflow-y: hidden;
+	overflow-x: auto;
+	margin-top: 10px;
+}
+
+.data-profile .judul-item,
+.data-profile .jumlah-item {
+	display: block;
+	white-space: nowrap;
+	margin: 0;
+}
+
+.data-profile .judul-item {
+	font-size: 12px;
+	font-weight: 400;
+}
+
+.data-profile .jumlah-item {
+	font-size: 40px;
+	font-weight: 800;
+}
+
+main .chart-statistik {
+	width: 100%;
+	height: auto;
+	display: flex;
+	margin-top: 20px;
+	box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+}
+
+.chart-statistik .chart-sidebar {
+	width: auto;
+	padding: 5px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	background: var(--text-color);
+	text-align: center;
+}
+
+.chart-sidebar li {
+	list-style: none;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.chart-sidebar .chart-aktif {
+	padding: 5px 5px 5px 15px;
+	background: var(--item-color);
+	color: var(--text-color);
+	border-top-left-radius: 16px;
+	border-bottom-left-radius: 16px;
+	margin-left: 10px;
+}
+
+.chart-statistik .chart-view {
+	width: calc(100% - 50px);
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	padding: 20px;
+	background-color: var(--item-color);
+}
+
+main .daftar-saran {
+	width: 100%;
+	height: 450px;
+	border-radius: 10px;
+	background: var(--light-color);
+	box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
+	padding: 20px;
+}
+
+.daftar-saran a {
+	padding: 5px;
+	border-radius: 5px;
+	background: var(--background-color);
+	font-size: 12;
+	font-weight: 600;
+}
+
+.daftar-saran .saran {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+	padding-top: 10px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.saran img {
+	width: 50px;
+	height: 50px;
+}
+
+.saran .nama-saran,
+.saran .instansi-saran,
+.saran .info-saran {
+	display: block;
+	margin-left: 10px;
+}
+
+.saran .nama-saran {
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.saran .instansi-saran,
+.saran .info-saran {
+	font-size: 12px;
+}
+
+.emoji-container {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+.emoji {
+	font-size: 30px;
+	cursor: pointer;
+	padding: 5px;
+}
+
+footer {
+	width: 100vw;
+	height: 50px;
+	padding: 10px;
+	text-align: center;
+	background: var(--text-color);
+	color: var(--item-color);
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 3;
+}
+
+footer .mobile {
+	display: none;
+}
+
+/* Responsive */
+@media only screen and (min-width: 280px) and (max-width: 540px) {
+	body,
+	html {
+		margin: 0;
+		padding: 0;
+	}
+
+	.topbar {
+		height: 30px;
+		padding: 10px;
+	}
+
+	.topbar img {
+		height: 20px;
+	}
+
+	.topbar-menu {
+		display: none;
+	}
+
+	main {
+		margin-top: 40px;
+	}
+
+	main .bio-statistik {
+		height: 150px;
+		padding: 5px;
+		border-radius: 8px;
+	}
+
+	.bio-statistik .bio-data {
+		width: 130px;
+		height: 150px;
+	}
+
+	.bio-data img {
+		width: 40px;
+		height: 40px;
+		margin: 0;
+	}
+
+	.bio-data .bio-nama {
+		font-size: 12px;
+	}
+
+	.bio-data .bio-nik {
+		font-size: 8px;
+	}
+
+	.bio-akses a {
+		margin-top: 0;
+	}
+
+	.bio-statistik .data-statistik {
+		width: calc(100% - 130px);
+		height: 130px;
+	}
+
+	.data-statistik .box-statistik {
+		height: 130px;
+		padding: 10px;
+		border-radius: 10px;
+		margin-left: 10px;
+	}
+
+	.box-statistik a {
+		padding: 3px;
+		border-radius: 3px;
+		font-size: 8px;
+		white-space: nowrap;
+	}
+
+	.bio-statistik .item-statistik {
+		margin-top: 2px;
+	}
+
+	.bio-statistik .report {
+		padding: 3px;
+		border-radius: 3px;
+		font-size: 8px;
+	}
+
+	.bio-statistik .pria,
+	.bio-statistik .wanita {
+		font-size: 8px;
+	}
+
+	.chart-statistik .chart-view {
+		padding: 10px;
+	}
+
+	h4 {
+		font-size: 12px;
+	}
+
+	select {
+		font-size: 12px;
+	}
+
+	.saran .nama-saran {
+		font-size: 10px;
+		font-weight: 600;
+	}
+
+	.saran .instansi-saran,
+	.saran .info-saran {
+		font-size: 8px;
+	}
+
+	footer p {
+		display: none;
+	}
+
+	footer .mobile {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+	}
+
+	.mobile a {
+		text-decoration: none;
+		color: var(--item-color);
+		font-size: 20px;
+	}
+
+	.mobile #aktif {
+		color: var(--primary-color);
+	}
+}

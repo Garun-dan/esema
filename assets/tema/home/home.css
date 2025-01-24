@@ -1,0 +1,424 @@
+/* 
+=============================================================================
+    Nama Proyek: esema
+    Deskripsi: elektronik assessment management.
+    Dibuat oleh: kosek
+    Tanggal: 24 Februari 2024
+=============================================================================
+*/
+
+/* Font */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+	font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+	font-size: 22px;
+	font-weight: 700;
+}
+
+h2 {
+	font-size: 20px;
+	font-weight: 600;
+}
+
+h3 {
+	font-size: 18px;
+	font-weight: 500;
+}
+
+h4 {
+	font-size: 16px;
+	font-weight: 400;
+}
+
+h5 {
+	font-size: 14px;
+	font-weight: 300;
+}
+
+h6 {
+	font-size: 12px;
+	font-weight: 200;
+}
+
+/* Colors */
+:root {
+	--primary-color: #83bc3c;
+	--secondary-color: #dce334;
+	--background-color: #f9f9f9;
+	--text-color: #000000;
+	--item-color: #ffffff;
+	--danger-color: #ff6347;
+	--warning-color: #ffa500;
+	--success-color: #32cd32;
+	--info-color: #87ceeb;
+	--light-color: #f5f5f5;
+	--dark-color: #333333;
+	--hover-menu-color: #c0c0c0;
+	--input-color: #d9d9d9;
+	--bar-1-color: #3e4c7a;
+	--bar-2-color: #b330c0;
+	--bar-3-color: #566d24;
+	--box-1-color: #ececec;
+	--box-2-color: #767676;
+	--box-3-color: #28a745;
+	--box-4-color: #3b3b3b;
+	--link-color: #0075ff;
+}
+
+/* Body */
+body {
+	margin: 0;
+	padding: 0;
+	background-color: var(--background-color);
+	overflow: hidden;
+	color: var(--text-color);
+}
+
+/* Background */
+#background {
+	position: fixed;
+	top: 0;
+	left: 50%;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	overflow: hidden;
+	animation-name: fadeIn;
+	animation-duration: 2s;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+#background img {
+	width: auto;
+	height: 100%;
+	object-fit: cover;
+}
+
+#topbar {
+	width: 100%;
+	height: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+}
+
+#topbar img {
+	height: 50px;
+	width: auto;
+	object-fit: cover;
+}
+
+#menu-tophome {
+	display: flex;
+	align-items: center;
+}
+
+#menu-tophome a {
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 500;
+	padding: 5px 10px;
+	border-radius: 10px;
+	margin-right: 10px;
+	color: var(--item-color);
+}
+
+#menu-tophome .aktif {
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 500;
+	padding: 5px 10px;
+	border-radius: 10px;
+	margin-right: 10px;
+	background-color: var(--secondary-color);
+	color: var(--text-color);
+}
+
+#menu-tophome .tbl-login {
+	padding: 5px 10px;
+	font-size: 16px;
+	font-weight: 700;
+	border-radius: 10px;
+	background-color: var(--item-color);
+	border: 0;
+}
+
+#item-menu {
+	display: none;
+}
+
+main {
+	position: absolute;
+	width: 50%;
+	left: 10%;
+	top: 50%;
+	transform: translateY(-50%);
+	animation-name: fadeIn;
+	animation-duration: 2s;
+}
+
+main .training {
+	font-size: 48px;
+	font-weight: 900;
+	margin-top: 5px;
+	/* line-height: 0.3; */
+}
+
+/* main .assessment {
+	font-size: 61px;
+	font-weight: 900;
+} */
+
+.modal-content {
+	border: 0;
+	box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
+	background: var(--item-color);
+}
+
+.modal-content .logo {
+	margin-left: 10px;
+	margin-right: 10px;
+	padding: 10px;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+	text-align: center;
+}
+
+.logo img {
+	height: 50px;
+	width: auto;
+	object-fit: cover;
+}
+
+.modal-content .modal-body {
+	color: var(--text-color);
+}
+
+.modal-body p,
+.modal-body label {
+	font-size: 16px;
+}
+
+.modal-body input {
+	border: 0;
+	background: var(--input-color);
+}
+
+.tbl-primer {
+	width: auto;
+	height: auto;
+	padding: 5px 10px;
+	border: 0;
+	border-radius: 10px;
+	background-color: var(--primary-color);
+	color: var(--item-color);
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.modal-body a {
+	text-decoration: none;
+	color: var(--primary-color);
+}
+
+#kontent {
+	width: 100%;
+	height: 100vh;
+	padding: 20px;
+}
+
+#kontent .judul-halaman {
+	display: block;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#keyword {
+	border: 0;
+	background-color: var(--input-color);
+	border-radius: 10px;
+	width: 25%;
+	margin-bottom: 20px;
+}
+
+.item-pedoman {
+	width: 100%;
+	height: auto;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-gap: 20px;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.box {
+	padding: 20px;
+	background-color: var(--light-color);
+	border-radius: 24px;
+	box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.box .icons {
+	font-size: 100px;
+}
+
+#footer {
+	width: 100%;
+	height: 50px;
+	padding: 10px;
+	position: fixed;
+	z-index: 3;
+	text-align: center;
+	bottom: 0;
+}
+
+#footer p {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* Responsive */
+@media only screen and (min-width: 541px) and (max-width: 1024px) {
+	body,
+	html {
+		margin: 0;
+		padding: 0;
+		height: 100%;
+		overflow: hidden;
+	}
+
+	#background img {
+		object-fit: unset !important;
+	}
+
+	main {
+		width: 70%;
+	}
+
+	main p {
+		width: 50%;
+	}
+
+	main {
+		left: 5%;
+	}
+
+	.item-pedoman {
+		overflow-y: hidden;
+		overflow-x: auto;
+	}
+}
+
+@media only screen and (min-width: 280px) and (max-width: 540px) {
+	body,
+	html {
+		margin: 0;
+		padding: 0;
+		height: 100%;
+		overflow: hidden;
+	}
+
+	#background {
+		left: 0;
+	}
+
+	#background img {
+		object-fit: unset !important;
+		width: 100vw;
+	}
+
+	#topbar img {
+		height: 30px;
+		width: auto;
+		object-fit: cover;
+	}
+
+	#topbar #menu-tophome {
+		display: none;
+	}
+
+	#item-menu {
+		display: block;
+		font-size: 24px;
+		font-weight: 900;
+		color: var(--text-color);
+	}
+
+	main {
+		width: 100%;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+	}
+
+	main .training {
+		font-size: 24px;
+		font-weight: 900;
+		line-height: 0.3;
+	}
+
+	main .assessment {
+		font-size: 30px;
+		font-weight: 900;
+	}
+
+	h3 {
+		font-size: 16x;
+	}
+
+	p {
+		font-size: 10px;
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+
+	.tbl-primer {
+		width: auto;
+		height: auto;
+		padding: 5px 10px;
+		border: 0;
+		border-radius: 10px;
+		background-color: var(--item-color);
+		color: var(--text-color);
+		font-size: 16px;
+		font-weight: 500;
+	}
+
+	#kontent {
+		overflow-y: auto;
+		overflow-x: hidden;
+		padding-bottom: 300px;
+	}
+
+	#keyword {
+		width: 100%;
+	}
+
+	.item-pedoman {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	#footer {
+		background-color: var(--background-color);
+	}
+}
